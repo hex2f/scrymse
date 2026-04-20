@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#drop-zone.is-dragover {
+  border-color: var(--color-indigo-500, #6366f1);
+  background-color: rgb(238 242 255 / 0.8);
+  box-shadow: 0 10px 25px -5px rgb(99 102 241 / 0.25);
+  transform: scale(1.01);
+}
+
+.cpt-block {
+  transition: opacity 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.cpt-block.is-copied {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.cpt-block.is-copied:hover {
+  border-color: rgb(226 232 240);
+  background-color: rgb(255 255 255);
+}
