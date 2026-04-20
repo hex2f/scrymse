@@ -25,6 +25,9 @@ export function parseMana(raw: string | CardValue): string[] {
             } else if (Number.isInteger(Number(c)) && Number.isInteger(Number(parts[parts.length - 1].at(-1)))) {
                 // digit following a digit -> same number
                 parts[parts.length - 1] += c;
+            } else if (parts[parts.length - 1].endsWith('/')) {
+                // we're still working on a hybrid mana symbol, so again stick it on the previous
+                parts[parts.length - 1] += c;
             } else {
                 parts.push(c);
             }
